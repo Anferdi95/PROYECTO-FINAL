@@ -15,7 +15,7 @@
     padding: 20px;
 }
 
-.reccuadro {
+.recuadro {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 15px;
@@ -32,6 +32,7 @@
         width: 70%; /* Se ajusta el tamaño para pantallas más pequeñas */
         height: auto; /* Altura automática para que se adapte */
         margin: 20px auto; /* Centrado horizontal y margen superior inferior */
+        font-size: 13px;
     }
 }
 
@@ -443,3 +444,78 @@ body {
         margin: 10px 0;
     }
 }
+@media (max-width: 400px) and (max-height: 850px) {
+    .hero {
+        width: 95vw;
+        height: auto;
+        margin: 20px auto;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .recuadro {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+        font-size: 14px;
+        height: auto;
+    }
+
+    .contenido-texto h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .contenido-texto p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .charIndex {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto 20px auto;
+    }
+
+    .card {
+        width: 90%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .imagenproducto {
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .boton,
+    .boton_carrito {
+        width: 140px;
+        font-size: 13px;
+        padding: 8px 12px;
+        margin-top: 10px;
+    }
+
+    .clase {
+        font-size: 11px;
+        padding: 3px 8px;
+        top: 5px;
+        right: 5px;
+    }
+
+    .container_muestras {
+        width: 95%;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .contenido-texto {
+        padding: 0 10px;
+    }
+
+    .border-behind {
+        display: none;
+    }
+}
+

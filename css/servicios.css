@@ -246,3 +246,67 @@ h2 {
     height: 150px;
   }
 }
+
+@media (max-width: 400px) {
+  body, html {
+    font-size: 14px;
+    background-size: cover;
+    background-attachment: scroll; /* Cambia fixed por scroll para mejor rendimiento en móvil */
+  }
+
+  .servicios-container {
+    width: 90%;
+    padding: 15px;
+    min-height: unset;
+    margin: 10px auto;
+  }
+
+  .menu {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .menu h2 {
+    font-size: 0.9em;
+    margin: 10px 0;
+  }
+
+  .galeria, .galeriachar, .galeriatab {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    padding-bottom: 15px;
+  }
+
+  .producto img, .imagenproducto {
+    max-height: 140px;
+  }
+
+  .producto, .card {
+    padding: 12px;
+  }
+
+  .nombre {
+    font-size: 1em;
+    padding-top: 10px;
+  }
+
+  .Precio, .precio {
+    font-size: 1em;
+  }
+
+  .boton_carrito {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-top: 10px;
+  }
+
+  .clase {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .desc {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+}
