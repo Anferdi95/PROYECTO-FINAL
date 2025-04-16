@@ -518,4 +518,9 @@ body {
         display: none;
     }
 }
-
+ em {
+    font-size: 1.7rem;
+    color: #cf774b;
+    display: block;
+    margin-bottom: 2px;
+  }
