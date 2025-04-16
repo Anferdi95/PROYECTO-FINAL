@@ -43,7 +43,15 @@
       </div>
 
       <div class="button-right">
-        <img src="../img/img_opti/carritoquesos-06.png" alt="carrito" class="carrito" />
+        <img src="../img/img_opti/carritoquesos-06.png" alt="carrito" class="carrito" id="toggleCarrito" style="cursor: pointer;"/>
+  
+        <!-- Carrito de compras (inicialmente oculto) -->
+        <div id="carritoDiv" class="carrito" style="display: none; position: fixed; top: 60; right: 0; width: 300px; height: 70%; background-color: white; box-shadow: -2px 0 5px rgba(0,0,0,0.5); padding: 20px; overflow-y: auto; z-index: 1000;padding-top: 50px;">
+          <h3>Carrito de compras</h3>
+          <ul id="carritoItems"></ul>
+          <div id="carritoTotal"></div>
+          <button id="vaciar" style="background-color: #CF8D6D; color: white; padding: 10px; border: none; cursor: pointer; width: 100%; border-radius: 5px;">Vaciar carrito</button>
+        </div>
       </div>
     </div>
   </header>
@@ -86,6 +94,8 @@
       </div>
     </div>
   </div>
+
+
 
   <footer class="footer">
     <div class="footer-content">

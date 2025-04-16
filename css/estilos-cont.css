@@ -44,12 +44,13 @@
 }
 
 body {
-    background-color: #fffbe064;
     background-image: url('../img/pagina\ web-06.png');
+  
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+   
     height: 100vh;
     margin: 0;
 }

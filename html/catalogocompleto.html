@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Catálogo de Productos</title>
@@ -181,6 +181,12 @@
               <p class="Precio">$${item.Precio.toLocaleString('es-CO')}</p>
               <div class="clase">${item.habilidades.join(', ')}</div>
               <button class="boton_carrito">Añadir al carrito</button>
+              <div class="botones-cantidad">
+      <button class="btn btn-restar">-1</button>
+      <span class="cantidad">0</span>
+      <button class="btn btn-agregar">+1</button>
+    </div>
+  </div>
             </div>
           `;
         });

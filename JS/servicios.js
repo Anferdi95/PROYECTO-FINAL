@@ -1,15 +1,75 @@
-// Muestra la sección correspondiente y carga los productos filtrados
+// Formato de precios
+const formatoPrecio = precio => new Intl.NumberFormat('es-CO', {
+  style: 'currency',
+  currency: 'COP',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0
+}).format(precio) + ' Pesos';
+
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function actualizarCarritoStorage() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function mostrarCarrito() {
+  const lista = document.getElementById("carritoItems");
+  const totalTexto = document.getElementById("carritoTotal");
+  lista.innerHTML = "";
+
+  let total = 0;
+  carrito.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+  <img src="${item.img}" alt="${item.producto}" style="width: 40px; height: 40px;">
+  <div>
+    <strong>${item.producto}</strong> - ${item.cantidad} unidad(es)<br>
+    <button class="btn-sumar" data-index="${index}">+</button>
+    <button class="btn-restar" data-index="${index}">-</button>
+  </div>
+`;
+
+    lista.appendChild(li);
+    total += item.cantidad * item.precio;
+  });
+
+  totalTexto.textContent = `Total: ${formatoPrecio(total)}`;
+
+  document.querySelectorAll(".btn-sumar").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = parseInt(e.target.dataset.index);
+      carrito[index].cantidad += 1;
+      actualizarCarritoStorage();
+      mostrarCarrito();
+    });
+  });
+
+  document.querySelectorAll(".btn-restar").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = parseInt(e.target.dataset.index);
+      carrito[index].cantidad -= 1;
+      if (carrito[index].cantidad <= 0) {
+        carrito.splice(index, 1);
+      }
+      actualizarCarritoStorage();
+      mostrarCarrito();
+    });
+  });
+}
+
+function buscarEnCarrito(nombre) {
+  return carrito.find(item => item.producto === nombre);
+}
+
+// Mostrar sección y cargar productos según categoría
 function mostrarInfo(servicio) {
-  // Oculta todas las secciones
   document.querySelectorAll('.info').forEach(section => {
     section.classList.remove('active');
   });
 
-  // Muestra la sección seleccionada
   const seccion = document.getElementById(servicio);
   seccion.classList.add('active');
 
-  // Cargar productos según la categoría
   if (servicio === 'bandejas') {
     cargarProductos('bandejas', 'galeria');
   } else if (servicio === 'charcuteria') {
@@ -19,36 +79,82 @@ function mostrarInfo(servicio) {
   }
 }
 
-// Función que filtra y muestra los productos por categoría
+// Cargar productos y añadir lógica a cada tarjeta
 function cargarProductos(categoria, contenedorId) {
   fetch('../db/datos.json')
     .then(res => res.json())
     .then(data => {
       const contenedor = document.getElementById(contenedorId);
-      contenedor.innerHTML = ''; // Limpiar contenido anterior
+      contenedor.innerHTML = '';
 
-      // Filtrar productos según la categoría en habilidades
       const productosFiltrados = data.filter(item =>
         item.habilidades.map(h => h.toLowerCase()).includes(categoria.toLowerCase())
       );
 
-      // Mostrar mensaje si no hay productos
       if (productosFiltrados.length === 0) {
         contenedor.innerHTML = '<p>No hay productos disponibles para esta categoría.</p>';
         return;
       }
 
-      // Agregar productos al contenedor
       productosFiltrados.forEach(item => {
-        contenedor.innerHTML += `
-          <div class="card">
-            <h2 class="nombre">${item.nombre}</h2>
-            <img class="imagenproducto" src="./${item.avatar.trim()}" alt="${item.nombre}">
-            <p class="Precio">$${item.Precio.toLocaleString('es-CO')}</p>
-            <div class="clase">${item.habilidades.join(', ')}</div>
-            <button class="boton_carrito">Añadir al carrito</button>
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h2 class="nombre">${item.nombre}</h2>
+          <img class="imagenproducto" src="./${item.avatar.trim()}" alt="${item.nombre}">
+          <p class="Precio">${formatoPrecio(item.Precio)}</p>
+          <div class="clase">${item.habilidades.join(', ')}</div>
+          <button class="boton_carrito">Añadir al carrito</button>
+          <div class="botones-cantidad">
+            <button class="btn btn-restar">-1</button>
+            <span class="cantidad">0</span>
+            <button class="btn btn-agregar">+1</button>
           </div>
         `;
+
+        let cantidad = 0;
+        const cantidadEl = card.querySelector('.cantidad');
+        const btnAgregar = card.querySelector('.btn-agregar');
+        const btnRestar = card.querySelector('.btn-restar');
+        const btnCarrito = card.querySelector('.boton_carrito');
+
+        btnAgregar.addEventListener("click", () => {
+          cantidad++;
+          cantidadEl.textContent = cantidad;
+        });
+
+        btnRestar.addEventListener("click", () => {
+          if (cantidad > 0) {
+            cantidad--;
+            cantidadEl.textContent = cantidad;
+          }
+        });
+
+        btnCarrito.addEventListener("click", () => {
+          if (cantidad === 0) {
+            alert("Selecciona una cantidad antes de añadir al carrito.");
+            return;
+          }
+
+          const existente = buscarEnCarrito(item.nombre);
+          if (existente) {
+            existente.cantidad += cantidad;
+          } else {
+            carrito.push({
+              producto: item.nombre,
+              cantidad,
+              precio: item.Precio,
+              img: `./${item.avatar.trim()}`
+            });
+          }
+
+          cantidad = 0;
+          cantidadEl.textContent = cantidad;
+          actualizarCarritoStorage();
+          mostrarCarrito();
+        });
+
+        contenedor.appendChild(card);
       });
     })
     .catch(error => {
@@ -58,7 +164,21 @@ function cargarProductos(categoria, contenedorId) {
     });
 }
 
-// Cargar categoría por defecto al iniciar (bandejas)
+// Eventos iniciales
 document.addEventListener('DOMContentLoaded', () => {
-  mostrarInfo('bandejas');
+  mostrarInfo('bandejas'); // Cargar bandejas por defecto
+  mostrarCarrito();
+});
+
+document.getElementById("vaciar").addEventListener("click", () => {
+  carrito.length = 0;
+  actualizarCarritoStorage();
+  mostrarCarrito();
+});
+
+
+document.getElementById("toggleCarrito").addEventListener("click", () => {
+  const carritoDiv = document.getElementById("carritoDiv");
+  // Toggle the display between "none" and "block"
+  carritoDiv.style.display = carritoDiv.style.display === "none" || carritoDiv.style.display === "" ? "block" : "none";
 });
