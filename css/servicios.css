@@ -1,23 +1,30 @@
-body, html {
-   background-color: #fffbe064;
+body,
+html {
+  background-color: #fffbe064;
   margin: 0;
- 
+
   background-image: url('../img/pagina web-06.png');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
 .body-wrapper {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 100%; /* Ocupa toda la altura disponible */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+  height: 100%;
+  /* Ocupa toda la altura disponible */
 }
-.contenedorPrincipal{
+
+.contenedorPrincipal {
   display: flex;
   justify-content: center;
 }
+
 .servicios-container {
   justify-content: center;
   margin: 20px;
@@ -29,7 +36,8 @@ body, html {
   width: 70%;
   max-height: none;
   min-height: 350%;
-  padding: 20px; /* Agrega algo de espacio dentro del contenedor */
+  padding: 20px;
+  /* Agrega algo de espacio dentro del contenedor */
 }
 
 .content {
@@ -38,17 +46,27 @@ body, html {
 }
 
 .menu {
-  display: flex; /* Cambia el display a flex para que los elementos se alineen en fila */
-  justify-content: space-around; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
+  display: flex;
+  /* Cambia el display a flex para que los elementos se alineen en fila */
+  justify-content: space-around;
+  /* Centra los elementos horizontalmente */
+  align-items: center;
+  /* Centra los elementos verticalmente */
   background-color: #F5E7E4;
-  padding: 20px 0; /* Añade un poco de espacio arriba y abajo */
-  border-radius: 12px 12px 0 0; /* Bordes redondeados en la parte superior */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil en la parte superior */
-  position: sticky; /* Fija el menú en la parte superior */
-  top: 0; /* Asegura que quede arriba */
-  z-index: 100; /* Asegura que el menú esté encima de otros elementos */
-  width: 100%; /* Asegura que ocupe el ancho completo de la página */
+  padding: 20px 0;
+  /* Añade un poco de espacio arriba y abajo */
+  border-radius: 12px 12px 0 0;
+  /* Bordes redondeados en la parte superior */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil en la parte superior */
+  position: sticky;
+  /* Fija el menú en la parte superior */
+  top: 0;
+  /* Asegura que quede arriba */
+  z-index: 100;
+  /* Asegura que el menú esté encima de otros elementos */
+  width: 100%;
+  /* Asegura que ocupe el ancho completo de la página */
 }
 
 .menu h2 {
@@ -56,23 +74,32 @@ body, html {
   color: #333;
   font-size: 1em;
   font-weight: bold;
-  margin: 0 20px; /* Espacio entre los elementos */
-  text-transform: uppercase; /* Convierte el texto a mayúsculas */
-  letter-spacing: 2px; /* Añade espacio entre las letras */
+  margin: 0 20px;
+  /* Espacio entre los elementos */
+  text-transform: uppercase;
+  /* Convierte el texto a mayúsculas */
+  letter-spacing: 2px;
+  /* Añade espacio entre las letras */
   padding: 5px;
   transition: all 0.3s ease;
-  border-bottom: 3px solid transparent; /* Borde invisible por defecto */
+  border-bottom: 3px solid transparent;
+  /* Borde invisible por defecto */
 }
 
 .menu h2:hover {
-  color: #CF8D6D; /* Color rosado atractivo */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Sombra en el texto */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño cuando pasa el ratón */
-  border-bottom: 3px solid #CF8D6D; /* Muestra el borde rosado cuando pasa el ratón */
+  color: #CF8D6D;
+  /* Color rosado atractivo */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  /* Sombra en el texto */
+  transform: scale(1.05);
+  /* Aumenta ligeramente el tamaño cuando pasa el ratón */
+  border-bottom: 3px solid #CF8D6D;
+  /* Muestra el borde rosado cuando pasa el ratón */
 }
 
 .menu h2.active {
-  color: #CF8D6D; /* Aplica el color rosado cuando está activo */
+  color: #CF8D6D;
+  /* Aplica el color rosado cuando está activo */
   font-weight: bold;
 }
 
@@ -90,22 +117,26 @@ h2 {
   text-align: center;
   margin-bottom: 15px;
   font-size: 2em;
-  font-family:Georgia, 'Times New Roman', Times, serif
+  font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-.galeria, .galeriachar, .galeriatab {
+.galeria,
+.galeriachar,
+.galeriatab {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  min-height: 400px; /* Ajusta esto según el tamaño que necesites */
-  padding-bottom: 20px; /* Espacio extra para evitar que los productos se corten */
+  min-height: 400px;
+  /* Ajusta esto según el tamaño que necesites */
+  padding-bottom: 20px;
+  /* Espacio extra para evitar que los productos se corten */
 }
 
 .producto {
   background: white;
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.2s ease;
 }
@@ -142,14 +173,15 @@ h2 {
   background: white;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Sube un poco cuando el mouse pasa */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  /* Sube un poco cuando el mouse pasa */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nombre {
@@ -172,7 +204,8 @@ h2 {
 .Precio {
   font-size: 1.1em;
   font-weight: bold;
-  color: #585E7F; /* Color rosado */
+  color: #585E7F;
+  /* Color rosado */
   text-align: center;
   margin-bottom: 10px;
 }
@@ -204,7 +237,7 @@ h2 {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  
+
   /* Centrado */
   display: block;
   margin-left: auto;
@@ -217,14 +250,33 @@ h2 {
 }
 
 .desc {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f0f0; /* Gris claro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  /* Gris claro */
   padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  border-radius: 8px;
+  /* Bordes redondeados */
   max-width: 900px;
-  margin: 20px auto; /* Centrar el contenedor */
+  margin: 20px auto;
+  /* Centrar el contenedor */
   text-align: center;
+}
+
+#carritoDiv {
+  display: none;
+  position: fixed;
+  top: 120px;
+  right: 0;
+  width: 300px;
+  height: 90%;
+  background-color:rgb(250, 250, 250);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  padding-top: 30px;
 }
 
 /* Para pantallas pequeñas, se ajustan los cards */
@@ -248,10 +300,13 @@ h2 {
 }
 
 @media (max-width: 400px) {
-  body, html {
+
+  body,
+  html {
     font-size: 14px;
     background-size: cover;
-    background-attachment: scroll; /* Cambia fixed por scroll para mejor rendimiento en móvil */
+    background-attachment: scroll;
+    /* Cambia fixed por scroll para mejor rendimiento en móvil */
   }
 
   .servicios-container {
@@ -271,17 +326,21 @@ h2 {
     margin: 10px 0;
   }
 
-  .galeria, .galeriachar, .galeriatab {
+  .galeria,
+  .galeriachar,
+  .galeriatab {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 15px;
     padding-bottom: 15px;
   }
 
-  .producto img, .imagenproducto {
+  .producto img,
+  .imagenproducto {
     max-height: 140px;
   }
 
-  .producto, .card {
+  .producto,
+  .card {
     padding: 12px;
   }
 
@@ -290,7 +349,8 @@ h2 {
     padding-top: 10px;
   }
 
-  .Precio, .precio {
+  .Precio,
+  .precio {
     font-size: 1em;
   }
 
@@ -310,8 +370,10 @@ h2 {
     font-size: 0.9em;
   }
 }
-.btn-agregar, .btn-restar {
-  margin-left:5px;
+
+.btn-agregar,
+.btn-restar {
+  margin-left: 5px;
   padding: 3px 6px;
   font-size: 14px;
   background-color: #eee;
@@ -320,9 +382,11 @@ h2 {
   border: 1px solid #aaa;
 }
 
-.btn-sumar:hover, .btn-restar:hover {
+.btn-sumar:hover,
+.btn-restar:hover {
   background-color: #ddd;
 }
+
 .botones-cantidad {
   display: flex;
   justify-content: center;

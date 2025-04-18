@@ -37,8 +37,8 @@
       "nombre": "Mesa Eventos",
       "habilidades": ["Charcuteria"],
       "Precio": 909000,
-      "avatar": "../img/img_opti/charcuterio/mesa_Eventos.jpg",
-      "avatar2": "./img/img_opti/charcuterio/mesa_Eventos.jpg"
+      "avatar": "../../img/img_opti/charcuterio/eventos.jpg",
+      "avatar2": "./../img/img_opti/charcuterio/eventos.jpg.jpg"
     },
     
 

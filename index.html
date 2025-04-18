@@ -28,7 +28,7 @@
           <!-- Botones de redes -->
           <div class="buttons-left">
             <a class="btn-square" href="https://www.facebook.com/Quesosentablabogota/" target="_blank" title="Facebook">
-              <img class="face" src="../PROYECTO-FINAL/img/facebook.svg" alt="Icono de Facebook" />
+              <img class="face" src="../img/facebook.svg" alt="Icono de Facebook" />
             </a>
             <a class="btn-square" href="https://www.instagram.com/quesosentablabogota1" target="_blank" title="Instagram">
               <img class="insta" src="./img/1362857.png" alt="Icono de Instagram" />
@@ -69,7 +69,14 @@
         </div>
       </header>
     
-
+      <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+      
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
+      </script>
 
 
     <section class="hero">
@@ -85,7 +92,7 @@
     <section class="charcuteria">
         <div class="seccion_muestras">
             <div class="border-behind"></div>
-            <img class="charIndex" src="./img/img_opti/charcuterio/Mesa_Eventos.jpg" alt="char_index">
+            <img class="charIndex" src="./img/qetchar.jpg" alt="char_index">
         </div>
         <div class="contenido-texto">
             <h1> CHARCUTERIA</h1>
@@ -200,10 +207,8 @@
         </div>
     </footer>
 
-    <!-- Agregar el archivo JS -->
     <script src="./JS/java.js"></script>
-    
-
+    <script src="./JS/hamburguesa.js"></script>
 </body>
 
 </html>

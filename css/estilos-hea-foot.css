@@ -12,7 +12,11 @@
     min-height: 100vh;
     background-color: #eceae3;
   }
-  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   main {
     flex: 1;
   }
@@ -262,6 +266,62 @@
   @media (min-width: 769px) {
     .footer-content {
       flex-wrap: nowrap;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+    }
+  
+    .center-content {
+      order: 1;
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    .logo_header {
+      margin: 0;
+      max-height: 70px;
+    }
+  
+    .button-right {
+      order: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: static;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #FBE7E4;
+      text-align: center;
+    }
+  
+    .nav.active {
+      display: flex;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      padding: 10px 0;
+      gap: 10px;
+    }
+  
+    .buttons-left {
+      display: none; /* si querés ocultar íconos de redes en móvil */
     }
   }
   
