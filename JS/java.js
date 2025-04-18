@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             productos = data; // Guardamos los productos
-            mostrarProductosAleatorios(); // Mostramos los 3 productos aleatorios al inicio
+            productosAleatorios = mezclarArray([...productos]); // Mezclamos todos los productos al inicio
+            mostrarProductos(); // Mostramos todos los productos aleatorios al inicio
         })
         .catch(error => {
             console.error('Error cargando el JSON:', error);
@@ -24,18 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return formato.format(precio);
     }
 
-    // Función para mostrar 3 productos aleatorios
-    function mostrarProductosAleatorios() {
-        // Seleccionamos 3 productos aleatorios
-        const nuevosProductosAleatorios = obtenerProductosAleatorios(3);
-
-        // Si los productos aleatorios son los mismos que los anteriores, no hacemos nada
-        if (JSON.stringify(nuevosProductosAleatorios) === JSON.stringify(productosAleatorios)) {
-            return; // Evita cambios innecesarios
+    // Función para mezclar productos aleatorios
+    function mezclarArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; // Intercambiar elementos
         }
+        return array;
+    }
 
-        productosAleatorios = nuevosProductosAleatorios;
-
+    // Función para mostrar productos
+    function mostrarProductos() {
         // Limpiamos el contenedor
         const contenedor = document.querySelector('.cards-container');
         
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 div.innerHTML = `
                     <img src="${producto.avatar2}" alt="${producto.nombre}" class="imagenproducto">
                     <h3 class="nombre">${producto.nombre}</h3>
-                    <p class="Precio">${formatoPrecio(producto.Precio)}</p> <!-- Aquí formateamos el precio -->
+                    <p class="Precio">${formatoPrecio(producto.Precio)}</p>
                     <p class="clase">${producto.habilidades}</p>
                     <button class="boton_carrito">Añadir al carrito</button>
                 `;
@@ -61,18 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.error('Contenedor con id "muestras" no encontrado.');
         }
-    }
-
-    // Función para obtener productos aleatorios
-    function obtenerProductosAleatorios(cantidad) {
-        const indicesAleatorios = [];
-        while (indicesAleatorios.length < cantidad) {
-            const indice = Math.floor(Math.random() * productos.length);
-            if (!indicesAleatorios.includes(indice)) {
-                indicesAleatorios.push(indice);
-            }
-        }
-        return indicesAleatorios.map(indice => productos[indice]);
     }
 
     // Event listeners para las flechas
@@ -95,28 +83,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Mostrar los nuevos productos
-        const contenedor = document.querySelector('.cards-container');
-        
-        // Verificamos si el contenedor existe
-        if (contenedor) {
-            contenedor.innerHTML = '';
-
-            productosAleatorios.forEach(producto => {
-                const div = document.createElement('div');
-                div.classList.add('card');
-                
-                div.innerHTML = `
-                   <img src="${producto.avatar2}" alt="${producto.nombre}" class="imagenproducto">
-                    <h3 class="nombre">${producto.nombre}</h3>
-                    <p class="Precio">${formatoPrecio(producto.Precio)}</p> <!-- Aquí formateamos el precio -->
-                    <p class="clase">${producto.habilidades}</p>
-                    <button class="boton_carrito">Añadir al carrito</button>
-                `;
-                
-                contenedor.appendChild(div);
-            });
-        } else {
-            console.error('Contenedor con id "muestras" no encontrado.');
-        }
+        mostrarProductos();
     }
+
+    // Mostrar los productos aleatorios al cargar
+    mostrarProductos();
+
+    // Menú de navegación móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+      
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 });
