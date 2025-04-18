@@ -299,7 +299,7 @@ h2 {
   }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 750px) {
 
   body,
   html {
