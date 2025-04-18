@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Array para almacenar los productos
     let productos = [];
-    let productosAleatorios = [];
+    let productosVisible = [];
+    let productosPorPagina = 3; // Número de productos a mostrar por página
+    let indiceProducto = 0; // Índice del primer producto que se muestra
 
     // Función para cargar el JSON
     fetch('./db/datos.json')
         .then(response => response.json())
         .then(data => {
             productos = data; // Guardamos los productos
-            productosAleatorios = mezclarArray([...productos]); // Mezclamos todos los productos al inicio
-            mostrarProductos(); // Mostramos todos los productos aleatorios al inicio
+            mostrarProductos(); // Mostramos los productos al inicio
         })
         .catch(error => {
             console.error('Error cargando el JSON:', error);
@@ -25,15 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return formato.format(precio);
     }
 
-    // Función para mezclar productos aleatorios
-    function mezclarArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]]; // Intercambiar elementos
-        }
-        return array;
-    }
-
     // Función para mostrar productos
     function mostrarProductos() {
         // Limpiamos el contenedor
@@ -43,8 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (contenedor) {
             contenedor.innerHTML = '';
 
+            // Seleccionamos los productos a mostrar basados en el índice
+            productosVisible = productos.slice(indiceProducto, indiceProducto + productosPorPagina);
+
+            // Si el número de productos restantes es menor que el límite de productos por página, agregamos los primeros productos del array para completar
+            if (productosVisible.length < productosPorPagina) {
+                productosVisible = productosVisible.concat(productos.slice(0, productosPorPagina - productosVisible.length));
+            }
+
             // Mostramos los productos seleccionados
-            productosAleatorios.forEach(producto => {
+            productosVisible.forEach(producto => {
                 const div = document.createElement('div');
                 div.classList.add('card');
                 
@@ -75,25 +75,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para alternar los productos cuando se hace clic en las flechas
     function alternarProductos(direccion) {
         if (direccion === "izquierda") {
-            // Rotar los productos hacia la izquierda
-            productosAleatorios.push(productosAleatorios.shift());
+            // Desplazar el índice hacia atrás y mostrar los productos anteriores
+            indiceProducto = (indiceProducto - productosPorPagina + productos.length) % productos.length;
         } else if (direccion === "derecha") {
-            // Rotar los productos hacia la derecha
-            productosAleatorios.unshift(productosAleatorios.pop());
+            // Desplazar el índice hacia adelante y mostrar los siguientes productos
+            indiceProducto = (indiceProducto + productosPorPagina) % productos.length;
         }
 
         // Mostrar los nuevos productos
         mostrarProductos();
     }
-
-    // Mostrar los productos aleatorios al cargar
-    mostrarProductos();
-
-    // Menú de navegación móvil
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-      
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
 });
