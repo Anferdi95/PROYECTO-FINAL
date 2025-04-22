@@ -36,6 +36,22 @@ body {
   width: 70%;
   margin: 0 auto; /* Centra el menú en su contenedor */
 }
+#mensajeAgregado{
+
+  position: fixed;
+              top: 80px;
+              right: 20px;
+              background-color: #cf8d6d;
+              color: white;
+              padding: 10px 16px;
+              border-radius: 8px;
+              display: none;
+              z-index: 2000;
+  
+  }
+
+
+
 #bandejas h3, #charcuteria h3, #tablas h3 {
 
   text-align: center;
@@ -365,7 +381,7 @@ button:hover {
   #bandejas h3, #charcuteria h3, #tablas h3 {
     text-align: center;
     margin: 0;
-    left: 50%;
+    left: 500%;
     transform: translate(-50%, -50%); /* Asegura que se centre perfectamente */
     font-size: 1em; /* Puedes ajustar el tamaño de la fuente si es necesario */}
 

@@ -1,5 +1,3 @@
-
-
 // Formato de precios
 const formatoPrecio = precio => new Intl.NumberFormat('es-CO', {
   style: 'currency',
@@ -80,6 +78,18 @@ function mostrarInfo(servicio) {
   }
 }
 
+// Función para mostrar mensaje de éxito
+function mostrarMensajeAgregado() {
+  const mensaje = document.getElementById("mensajeAgregado");
+  mensaje.style.display = "block";
+  mensaje.style.opacity = "1";
+
+  setTimeout(() => {
+    mensaje.style.opacity = "0";
+    setTimeout(() => mensaje.style.display = "none", 300);
+  }, 1500);
+}
+
 // Cargar productos y añadir lógica a cada tarjeta
 function cargarProductos(categoria, contenedorId) {
   fetch('../db/datos.json')
@@ -153,6 +163,7 @@ function cargarProductos(categoria, contenedorId) {
           cantidadEl.textContent = cantidad;
           actualizarCarritoStorage();
           mostrarCarrito();
+          mostrarMensajeAgregado(); // ← Aquí se muestra el mensaje
         });
 
         contenedor.appendChild(card);
