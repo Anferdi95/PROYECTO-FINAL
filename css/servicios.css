@@ -333,6 +333,15 @@ button:hover {
     width: 100%; /* El menú ocupa todo el ancho de la pantalla */
   }
 
+  #bandejas h3, #charcuteria h3, #tablas h3 {
+  text-align: center;
+  margin: 0;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Asegura que se centre perfectamente */
+  font-size: 1em; /* Puedes ajustar el tamaño de la fuente si es necesario */}
+
+
+
   .menu h2 {
     margin: 5px; /* Espaciado entre los elementos del menú */
   }
@@ -352,12 +361,18 @@ button:hover {
 
 /* Para móviles */
 @media (max-width: 480px) {
+
+  #bandejas h3, #charcuteria h3, #tablas h3 {
+    text-align: center;
+    margin: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Asegura que se centre perfectamente */
+    font-size: 1em; /* Puedes ajustar el tamaño de la fuente si es necesario */}
+
+
   .menu {
     padding: 5px 0; /* Reducimos el padding en móviles */
   }
-
- 
-
   /* Las tarjetas también ocuparán todo el ancho disponible */
   #galeria, #galeriachar, #galeriatab {
     grid-template-columns: repeat(1, 1fr); /* 2 productos por fila en dispositivos móviles y tabletas */
@@ -385,7 +400,7 @@ footer {
   position: relative;
 }
 .content {
-  flex-grow: 1; /* Esto asegura que el contenido ocupe el espacio restante */
-  padding-bottom: 80px; /* Espacio para el footer si es necesario */
+  flex-grow: 1;
+  padding-bottom: 80px; 
 }
 
