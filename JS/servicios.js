@@ -179,5 +179,5 @@ document.getElementById("vaciar").addEventListener("click", () => {
 
 document.getElementById("toggleCarrito").addEventListener("click", () => {
   const carritoDiv = document.getElementById("carritoDiv");
-  carritoDiv.style.display = carritoDiv.style.display === "none" || carritoDiv.style.display === "" ? "block" : "none";
+  carritoDiv.classList.toggle("activo");
 });
