@@ -1,3 +1,5 @@
+
+
 // Formato de precios
 const formatoPrecio = precio => new Intl.NumberFormat('es-CO', {
   style: 'currency',
@@ -21,14 +23,13 @@ function mostrarCarrito() {
   carrito.forEach((item, index) => {
     const li = document.createElement("li");
     li.innerHTML = `
-  <img src="${item.img}" alt="${item.producto}" style="width: 40px; height: 40px;">
-  <div>
-    <strong>${item.producto}</strong> - ${item.cantidad} unidad(es)<br>
-    <button class="btn-sumar" data-index="${index}">+</button>
-    <button class="btn-restar" data-index="${index}">-</button>
-  </div>
-`;
-
+      <img src="${item.img}" alt="${item.producto}" style="width: 40px; height: 40px;">
+      <div>
+        <strong>${item.producto}</strong> - ${item.cantidad} unidad(es)<br>
+        <button class="btn-sumar" data-index="${index}">+</button>
+        <button class="btn-restar" data-index="${index}">-</button>
+      </div>
+    `;
     lista.appendChild(li);
     total += item.cantidad * item.precio;
   });
@@ -101,7 +102,7 @@ function cargarProductos(categoria, contenedorId) {
         card.className = 'card';
         card.innerHTML = `
           <h2 class="nombre">${item.nombre}</h2>
-          <img class="imagenproducto" src="./${item.avatar.trim()}" alt="${item.nombre}">
+          <img class="imagenproducto" src="./${item.avatar.trim()}" alt="${item.nombre}" data-nombre="${item.nombre}">
           <p class="Precio">${formatoPrecio(item.Precio)}</p>
           <div class="clase">${item.habilidades.join(', ')}</div>
           <button class="boton_carrito">Añadir al carrito</button>
@@ -176,9 +177,7 @@ document.getElementById("vaciar").addEventListener("click", () => {
   mostrarCarrito();
 });
 
-
 document.getElementById("toggleCarrito").addEventListener("click", () => {
   const carritoDiv = document.getElementById("carritoDiv");
-  // Toggle the display between "none" and "block"
   carritoDiv.style.display = carritoDiv.style.display === "none" || carritoDiv.style.display === "" ? "block" : "none";
 });

@@ -45,12 +45,12 @@
 
 body {
     background-image: url('../img/pagina\ web-06.png');
-  
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-   
+    background-blend-mode: darken; /* Prueba también: 'multiply', 'overlay', 'soft-light' */
     height: 100vh;
     margin: 0;
 }

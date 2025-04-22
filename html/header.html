@@ -1,76 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Header</title>
-  <link rel="stylesheet" href="../css/estilos-hea-foot.css" />
-</head>
-<body>
-  <header>
-    <div class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <link rel="stylesheet" href="../css/estilos-hea-foot.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <!-- Botón de menú hamburguesa -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
 
-      <!-- Botón de menú hamburguesa -->
-      <div class="menu-toggle" id="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+        <!-- Botones de redes -->
+        <div class="buttons-left">
+          <a
+            class="btn-square"
+            href="https://www.facebook.com/Quesosentablabogota/"
+            target="_blank"
+            title="Facebook"
+          >
+            <img
+              class="face"
+              src="../img/facebook.svg"
+              alt="Icono de Facebook"
+            />
+          </a>
+          <a
+            class="btn-square"
+            href="https://www.instagram.com/quesosentablabogota1"
+            target="_blank"
+            title="Instagram"
+          >
+            <img
+              class="insta"
+              src="../img/1362857.png"
+              alt="Icono de Instagram"
+            />
+          </a>
+          <a
+            class="btn-square"
+            href="https://api.whatsapp.com/send?phone=573209996208"
+            target="_blank"
+            title="WhatsApp"
+          >
+            <img class="whatsapp" src="../img/viber.svg" alt="WhatsApp" />
+          </a>
+        </div>
 
-      <!-- Botones de redes -->
-      <div class="buttons-left">
-        <a class="btn-square" href="https://www.facebook.com/Quesosentablabogota/" target="_blank" title="Facebook">
-          <img class="face" src="../img/facebook.svg" alt="Icono de Facebook" />
-        </a>
-        <a class="btn-square" href="https://www.instagram.com/quesosentablabogota1" target="_blank" title="Instagram">
-          <img class="insta" src="../img/1362857.png" alt="Icono de Instagram" />
-        </a>
-        <a class="btn-square" href="https://api.whatsapp.com/send?phone=573209996208" target="_blank" title="WhatsApp">
-          <img class="whatsapp" src="../img/viber.svg" alt="WhatsApp" />
-        </a>
-      </div>
+        <!-- Logo + nav -->
+        <div class="center-content">
+          <img
+            class="logo_header"
+            src="../img/QET_Mesa de trabajo 1 copia.png"
+            alt="logo"
+          />
+          <nav class="nav" id="nav-menu">
+            <ul>
+              <li><a href="../index.html">Inicio</a></li>
+              <hr />
+              <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+              <hr />
+              <li><a href="Servicios.html">Servicios</a></li>
+              <hr />
+              <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+          </nav>
+        </div>
 
-      <!-- Logo + nav -->
-      <div class="center-content">
-        <img class="logo_header" src="../img/QET_Mesa de trabajo 1 copia.png" alt="logo" />
-        <nav class="nav" id="nav-menu">
-          <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <hr />
-            <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
-            <hr />
-            <li><a href="Servicios.html">Servicios</a></li>
-            <hr />
-            <li><a href="contacto.html">Contáctanos</a></li>
-          </ul>
-        </nav>
-      </div>
+        <!-- Carrito -->
+        <div class="button-right">
+          <img
+            src="../img/img_opti/carritoquesos-06.png"
+            alt="carrito"
+            class="carrito"
+            id="toggleCarrito"
+          />
 
-      <!-- Carrito -->
-      <div class="button-right">
-        <img src="../img/img_opti/carritoquesos-06.png" alt="carrito" class="carrito" id="toggleCarrito" />
-
-        <div id="carritoDiv" class="carrito" style="display: none; position: fixed; top: 60px; right: 0; width: 300px; height: 70%; background-color: white; box-shadow: -2px 0 5px rgba(0,0,0,0.5); padding: 20px; overflow-y: auto; z-index: 1000; padding-top: 50px;">
-          <h3>Carrito de compras</h3>
-          <ul id="carritoItems"></ul>
-          <div id="carritoTotal"></div>
-          <button id="vaciar" style="background-color: #CF8D6D; color: white; padding: 10px; border: none; cursor: pointer; width: 100%; border-radius: 5px;">Vaciar carrito</button>
+          <div
+            id="carritoDiv"
+            class="carrito"
+            style="
+              display: none;
+              position: fixed;
+              top: 60px;
+              right: 0;
+              width: 300px;
+              height: 70%;
+              background-color: white;
+              box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+              padding: 20px;
+              overflow-y: auto;
+              z-index: 1000;
+              padding-top: 50px;
+            "
+          >
+            <h3>Carrito de compras</h3>
+            <ul id="carritoItems"></ul>
+            <div id="carritoTotal"></div>
+            <button
+              id="vaciar"
+              style="
+                background-color: #cf8d6d;
+                color: white;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                border-radius: 5px;
+              "
+            >
+              Vaciar carrito
+            </button>
+          </div>
         </div>
       </div>
+    </header>
 
-    </div>
-  </header>
+    <!-- Script para hamburguesa -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
 
-  <!-- Script para hamburguesa -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuToggle = document.getElementById('menu-toggle');
-      const navMenu = document.getElementById('nav-menu');
-
-      menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+        menuToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

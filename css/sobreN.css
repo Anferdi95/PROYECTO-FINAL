@@ -1,5 +1,4 @@
 body {
-
   margin: 0;
   padding: 0;
   background-color: #f9f5f1;
@@ -31,7 +30,7 @@ q {
 
 .texto em {
   font-size: 1.4rem;
-  color: #CF8D6D;
+  color: #cf8d6d;
   display: block;
   margin-bottom: 30px;
 }
@@ -44,7 +43,7 @@ q {
 
 .boton {
   display: inline-block;
-  background-color: #CF8D6D;
+  background-color: #cf8d6d;
   color: #fff;
   padding: 12px 24px;
   border-radius: 8px;

@@ -1,327 +1,326 @@
 /* RESET GENERAL */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* BODY */
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #eceae3;
-  }
-  .center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  main {
-    flex: 1;
-  }
-  
-  /* HEADER GENERAL */
-  .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #FBE7E4;
-    color: #2d2d2d;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    flex-wrap: wrap;
-  }
-  
-  /* BOTONES IZQUIERDA */
-  .buttons-left {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn-square {
-    width: 40px;
-    height: 40px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* CARRITO DERECHA */
-  .button-right {
-    position: absolute;
-    top: 40px;
-    right: 50px;
-  }
-  
-  .carrito {
-    height: 65px;
-    opacity: 80%;
-    cursor: pointer;
-  }
-  
-  /* LOGO HEADER */
-  .logo_header {
-    height: auto;
-    max-height: 150px;
-    width: auto;
-    margin-bottom: 20px;
-    margin-left: 100px;
-  }
-  
-  /* NAV */
-  .nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav ul li {
-    display: inline-block;
-  }
-  
-  .header a,
-  .footer a {
-    color: #2d2d2d;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .header a:hover,
-  .footer a:hover,
-  .header a:focus,
-  .footer a:focus {
-    color: #eb1313;
-    outline: none;
-  }
-  
-  /* MENU HAMBURGUESA */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #eceae3;
+}
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  flex: 1;
+}
+
+/* HEADER GENERAL */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fbe7e4;
+  color: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* BOTONES IZQUIERDA */
+.buttons-left {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-square {
+  width: 40px;
+  height: 40px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* CARRITO DERECHA */
+.button-right {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+}
+
+.carrito {
+  height: 65px;
+  opacity: 80%;
+  cursor: pointer;
+}
+
+/* LOGO HEADER */
+.logo_header {
+  height: auto;
+  max-height: 150px;
+  width: auto;
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  display: inline-block;
+}
+
+.header a,
+.footer a {
+  color: #2d2d2d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header a:hover,
+.footer a:hover,
+.header a:focus,
+.footer a:focus {
+  color: #eb1313;
+  outline: none;
+}
+
+/* MENU HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #2d2d2d;
+  border-radius: 2px;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #fbe7e4;
+  color: #2d2d2d;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-left img,
+.footer-right img,
+.logo_footer {
+  margin: 0 10px;
+}
+
+.footer-right p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-left img {
+  width: 30px;
+  height: auto;
+}
+
+.logo_footer {
+  width: 150px;
+  height: auto;
+}
+
+/* ICONO INSTAGRAM AJUSTE */
+.insta {
+  height: 40px;
+}
+
+/* MEDIA QUERIES - MOVILES */
+@media (max-width: 768px) {
   .menu-toggle {
+    display: flex;
+  }
+
+  #nav-menu {
     display: none;
     flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    z-index: 1001;
-  }
-  
-  .menu-toggle .bar {
-    width: 30px;
-    height: 4px;
-    background-color: #2d2d2d;
-    border-radius: 2px;
-  }
-  
-  /* FOOTER */
-  .footer {
-    background-color: #FBE7E4;
-    color: #2d2d2d;
-    text-align: center;
-    font-size: 14px;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
+    background-color: #fbe7e4;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+    z-index: 999;
   }
-  
-  .footer-content {
+
+  #nav-menu.active {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    padding: 10px 20px;
-    flex-wrap: wrap;
   }
-  
+
+  #nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 10px;
+  }
+
+  #nav-menu ul li {
+    margin: 10px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .center-content {
+    text-align: center;
+  }
+
+  .buttons-left {
+    top: 20px;
+    left: 15px;
+    gap: 8px;
+  }
+
+  .button-right {
+    top: 20px;
+    right: 15px;
+  }
+
+  .carrito {
+    height: 50px;
+    padding: 6px 12px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left img {
+    width: 25px;
+  }
+
+  .footer-right p {
+    font-size: 12px;
+  }
+
+  .logo_footer {
+    width: 100px;
+  }
+
   .footer-left,
   .footer-right {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+
+/* MEDIA QUERIES - GRANDES */
+@media (min-width: 769px) {
+  .footer-content {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .center-content {
+    order: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logo_header {
+    margin: 0;
+    max-height: 70px;
+  }
+
+  .button-right {
+    order: 2;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    position: static;
   }
-  
-  .footer-left img,
-  .footer-right img,
-  .logo_footer {
-    margin: 0 10px;
+
+  .menu-toggle {
+    display: flex;
   }
-  
-  .footer-right p {
-    margin: 0;
-    font-size: 14px;
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fbe7e4;
+    text-align: center;
   }
-  
-  .footer-left img {
-    width: 30px;
-    height: auto;
+
+  .nav.active {
+    display: flex;
   }
-  
-  .logo_footer {
-    width: 150px;
-    height: auto;
+
+  .nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 10px;
   }
-  
-  /* ICONO INSTAGRAM AJUSTE */
-  .insta {
-    height: 40px;
+
+  .buttons-left {
+    display: none; /* si querés ocultar íconos de redes en móvil */
   }
-  
-  /* MEDIA QUERIES - MOVILES */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
-  
-    #nav-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #FBE7E4;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      padding: 10px 0;
-      z-index: 999;
-    }
-  
-    #nav-menu.active {
-      display: flex;
-    }
-  
-    #nav-menu ul {
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-      gap: 10px;
-    }
-  
-    #nav-menu ul li {
-      margin: 10px 0;
-    }
-  
-    .header {
-      flex-direction: column;
-      padding: 5px;
-    }
-  
-    .center-content {
-      text-align: center;
-    }
-  
-    .buttons-left {
-      top: 20px;
-      left: 15px;
-      gap: 8px;
-    }
-  
-    .button-right {
-      top: 20px;
-      right: 15px;
-    }
-  
-    .carrito {
-      height: 50px;
-      padding: 6px 12px;
-    }
-  
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-left img {
-      width: 25px;
-    }
-  
-    .footer-right p {
-      font-size: 12px;
-    }
-  
-    .logo_footer {
-      width: 100px;
-    }
-  
-    .footer-left,
-    .footer-right {
-      flex-basis: 100%;
-      text-align: center;
-    }
-  }
-  
-  /* MEDIA QUERIES - GRANDES */
-  @media (min-width: 769px) {
-    .footer-content {
-      flex-wrap: nowrap;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 15px;
-    }
-  
-    .center-content {
-      order: 1;
-      flex-grow: 1;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-  
-    .logo_header {
-      margin: 0;
-      max-height: 70px;
-    }
-  
-    .button-right {
-      order: 2;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      position: static;
-    }
-  
-    .menu-toggle {
-      display: flex;
-    }
-  
-    .nav {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #FBE7E4;
-      text-align: center;
-    }
-  
-    .nav.active {
-      display: flex;
-    }
-  
-    .nav ul {
-      flex-direction: column;
-      padding: 10px 0;
-      gap: 10px;
-    }
-  
-    .buttons-left {
-      display: none; /* si querés ocultar íconos de redes en móvil */
-    }
-  }
-  
+}

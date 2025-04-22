@@ -3,7 +3,7 @@ html {
   background-color: #fffbe064;
   margin: 0;
 
-  background-image: url('../img/pagina web-06.png');
+  background-image: url("../img/pagina web-06.png");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -28,7 +28,7 @@ html {
 .servicios-container {
   justify-content: center;
   margin: 20px;
-  background-color: #FFF7E6;
+  background-color: #fff7e6;
   border-radius: 12px;
   overflow: hidden;
   justify-content: space-between;
@@ -52,7 +52,7 @@ html {
   /* Centra los elementos horizontalmente */
   align-items: center;
   /* Centra los elementos verticalmente */
-  background-color: #F5E7E4;
+  background-color: #f5e7e4;
   padding: 20px 0;
   /* Añade un poco de espacio arriba y abajo */
   border-radius: 12px 12px 0 0;
@@ -87,22 +87,21 @@ html {
 }
 
 .menu h2:hover {
-  color: #CF8D6D;
+  color: #cf8d6d;
   /* Color rosado atractivo */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   /* Sombra en el texto */
   transform: scale(1.05);
   /* Aumenta ligeramente el tamaño cuando pasa el ratón */
-  border-bottom: 3px solid #CF8D6D;
+  border-bottom: 3px solid #cf8d6d;
   /* Muestra el borde rosado cuando pasa el ratón */
 }
 
 .menu h2.active {
-  color: #CF8D6D;
+  color: #cf8d6d;
   /* Aplica el color rosado cuando está activo */
   font-weight: bold;
 }
-
 
 .info {
   display: none;
@@ -112,12 +111,11 @@ html {
   display: block;
 }
 
-
 h2 {
   text-align: center;
   margin-bottom: 15px;
   font-size: 2em;
-  font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .galeria,
@@ -163,7 +161,7 @@ h2 {
 }
 
 .precio {
-  color: #CF8D6D;
+  color: #cf8d6d;
   font-weight: bold;
   font-size: 1.1em;
 }
@@ -199,12 +197,15 @@ h2 {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
+
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .Precio {
   font-size: 1.1em;
   font-weight: bold;
-  color: #585E7F;
+  color: #585e7f;
   /* Color rosado */
   text-align: center;
   margin-bottom: 10px;
@@ -215,7 +216,7 @@ h2 {
   top: 10px;
   right: 15px;
   background-color: #e0e7ff;
-  color: #CF8D6D;
+  color: #cf8d6d;
   font-size: 12px;
   font-weight: 900;
   padding: 6px 12px;
@@ -230,7 +231,7 @@ h2 {
 .boton_carrito {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #CF8D6D;
+  background-color: #cf8d6d;
   color: white;
   border: none;
   border-radius: 8px;
@@ -245,12 +246,12 @@ h2 {
 }
 
 .boton_carrito:hover {
-  background-color: #CF8D6D;
+  background-color: #cf8d6d;
   transform: scale(1.05);
 }
 
 .desc {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f0f0;
   /* Gris claro */
   padding: 20px;
@@ -271,7 +272,7 @@ h2 {
   right: 0;
   width: 300px;
   height: 90%;
-  background-color:rgb(250, 250, 250);
+  background-color: rgb(250, 250, 250);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   padding: 20px;
   overflow-y: auto;
@@ -300,7 +301,6 @@ h2 {
 }
 
 @media (max-width: 750px) {
-
   body,
   html {
     font-size: 14px;
