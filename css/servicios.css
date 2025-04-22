@@ -370,11 +370,25 @@ h2 {
     font-size: 0.9em;
   }
 }
+.btn-sumar
+
+{
+  margin: 5px;
+  padding: 11px;
+}
+
+.btn-restar
+{
+  margin: 5px;
+  
+}
+
 
 .btn-agregar,
-.btn-restar {
-  margin-left: 5px;
-  padding: 3px 6px;
+.btn-restar
+ {
+  margin-left: 15px;
+  padding: 13px 6px;
   font-size: 14px;
   background-color: #eee;
   border-radius: 3px;

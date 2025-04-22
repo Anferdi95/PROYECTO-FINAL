@@ -105,7 +105,7 @@
         "nombre": "Mesa Eventos",
         "habilidades": ["Charcutería"],
         "Precio": 909000,
-        "avatar": "./img/qetchar.jpg",
+        "avatar": "../img/qetchar.jpg",
         "descripcion": "Ideal para grupos",
         "total_productos": 30,
         "carnes": [
