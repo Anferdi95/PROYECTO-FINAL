@@ -28,23 +28,31 @@ body {
   width: 70%;
   margin: 0 auto; /* Centra el menú en su contenedor */
 }
+#bandejas h3, #charcuteria h3, #tablas h3 {
 
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Asegura que se centre perfectamente */
+  font-size: 2em; /* Puedes ajustar el tamaño de la fuente si es necesario */
+}
 .menu h2 {
   cursor: pointer;
   color: #333;
   font-size: 1em;
   font-weight: bold;
   margin: 0 20px;
-  /* Espacio entre los elementos */
   text-transform: uppercase;
-  /* Convierte el texto a mayúsculas */
   letter-spacing: 2px;
-  /* Añade espacio entre las letras */
   padding: 5px;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
   /* Borde invisible por defecto */
   text-align: center;
+  text-align: center;
+  
 }
 .menu h2:hover {
   color: #cf8d6d;
@@ -347,9 +355,8 @@ button:hover {
 
   /* Las tarjetas también ocuparán todo el ancho disponible */
   #galeria, #galeriachar, #galeriatab {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 productos por fila en dispositivos móviles y tabletas */
   }
-
   /* Ajustamos el tamaño del carrito en pantallas más pequeñas */
   #carritoDiv {
     width: 250px;
@@ -369,22 +376,6 @@ button:hover {
     width: 100%; /* Asegura que ocupe todo el espacio disponible */
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
