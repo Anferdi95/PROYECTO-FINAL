@@ -86,3 +86,15 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarProductos();
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleCarrito = document.getElementById("toggleCarrito");
+    const carritoDiv = document.getElementById("carritoDiv");
+  
+    if (toggleCarrito && carritoDiv) {
+      toggleCarrito.addEventListener("click", () => {
+        const isVisible = carritoDiv.style.display === "block";
+        carritoDiv.style.display = isVisible ? "none" : "block";
+      });
+    }
+  });
