@@ -1,4 +1,4 @@
-/* Reset básico */
+/* reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,17 +14,17 @@ html, body {
   min-height: 100%;
 }
 body {
-  background-image: url('../img/pagina\ web-06.png');
+  background-image: url('../img/pagina web-06.png');
   background-color: #f6f6f6;
   color: #333;
   line-height: 1.5;
   padding-bottom: 80px;
 }
 
-/* Navegación o botones principales */
+/* barra del menu principal */
 .menu {
   display: flex;
-  justify-content: center; /* Centra los elementos horizontalmente */
+  justify-content: center; 
   align-items: center;
   background-color: #f5e7e4;
   padding: 20px 0;
@@ -34,33 +34,27 @@ body {
   top: 0;
   z-index: 100;
   width: 70%;
-  margin: 0 auto; /* Centra el menú en su contenedor */
+  margin: 0 auto;
 }
 #mensajeAgregado{
-
   position: fixed;
-              top: 80px;
-              right: 20px;
-              background-color: #cf8d6d;
-              color: white;
-              padding: 10px 16px;
-              border-radius: 8px;
-              display: none;
-              z-index: 2000;
-  
-  }
-
-
+  top: 80px;
+  right: 20px;
+  background-color: #cf8d6d;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  display: none;
+  z-index: 2000;
+}
 
 #bandejas h3, #charcuteria h3, #tablas h3 {
-
   text-align: center;
   margin: 0;
   position: absolute;
- 
   left: 50%;
-  transform: translate(-50%, -50%); /* Asegura que se centre perfectamente */
-  font-size: 2em; /* Puedes ajustar el tamaño de la fuente si es necesario */
+  transform: translate(-50%, -50%);
+  font-size: 2em;
 }
 .menu h2 {
   cursor: pointer;
@@ -73,42 +67,29 @@ body {
   padding: 5px;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
-  /* Borde invisible por defecto */
   text-align: center;
-  text-align: center;
-  
 }
 .menu h2:hover {
   color: #cf8d6d;
-  /* Color rosado atractivo */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra en el texto */
   transform: scale(1.05);
-  /* Aumenta ligeramente el tamaño cuando pasa el ratón */
   border-bottom: 3px solid #cf8d6d;
-  /* Muestra el borde rosado cuando pasa el ratón */
 }
 
 .menu h2.active {
   color: #cf8d6d;
-  /* Aplica el color rosado cuando está activo */
   font-weight: bold;
 }
 .desc {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f0f0;
-  /* Gris claro */
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
   border-radius: 8px;
-  /* Bordes redondeados */
   max-width: 900px;
   margin: 20px auto;
-  /* Centrar el contenedor */
   text-align: center;
 }
-
 
 button {
   background-color: #cf8d6d;
@@ -124,7 +105,7 @@ button:hover {
   background-color: #b8735b;
 }
 
-/* Secciones */
+/* info por seccion */
 .info {
   display: none;
   padding: 30px;
@@ -136,18 +117,17 @@ button:hover {
   display: block;
 }
 
-/* Contenedor de tarjetas */
+/* contenedor de productos */
 #galeria, #galeriachar, #galeriatab {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
-  max-width: 1200px; /* O ajusta el valor según el tamaño deseado */
-  margin: 0 auto; /* Esto centra la galería en la pantalla */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
-/* Tarjetas de producto */
+/* tarjetas de productos */
 .card {
   background-color: #fff7ef;
   border-radius: 12px;
@@ -186,7 +166,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* Botones de cantidad */
+/* botones para sumar o restar cantidad */
 .botones-cantidad {
   display: flex;
   justify-content: center;
@@ -210,7 +190,7 @@ button:hover {
   font-weight: bold;
 }
 
-/* Carrito lateral */
+/* carrito lateral */
 #carritoDiv {
   position: fixed;
   top: 100px;
@@ -225,14 +205,13 @@ button:hover {
   z-index: 1000;
   border-radius: 12px 0 0 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
   transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
 
-/* Mostrar carrito */
+/* carrito abierto */
 #carritoDiv.activo {
   transform: translateX(0);
   opacity: 1;
@@ -316,7 +295,7 @@ button:hover {
   background-color: #b8735b;
 }
 
-/* Botón para abrir el carrito */
+/* boton para abrir carrito */
 #toggleCarrito {
   position: fixed;
   top: 20px;
@@ -336,74 +315,63 @@ button:hover {
   background-color: #b8735b;
 }
 
-
-.btn-sumar, .btn-restar{
+.btn-sumar, .btn-restar {
   color: #333;
 }
 
-/* Para tabletas y dispositivos pequeños */
+/* para tablets */
 @media (max-width: 768px) {
-  /* Menu vertical */
   .menu {
     flex-direction: column;
-    width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+    width: 100%;
   }
 
   #bandejas h3, #charcuteria h3, #tablas h3 {
-  text-align: center;
-  margin: 0;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Asegura que se centre perfectamente */
-  font-size: 1em; /* Puedes ajustar el tamaño de la fuente si es necesario */}
-
-
+    text-align: center;
+    margin: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+  }
 
   .menu h2 {
-    margin: 5px; /* Espaciado entre los elementos del menú */
+    margin: 5px;
   }
 
-  /* Las tarjetas ocuparán el 100% del ancho */
-  
-    #galeria, #galeriachar, #galeriatab {
-      grid-template-columns: repeat(2, 1fr); /* 3 productos por fila en dispositivos móviles y tabletas */
-    }
+  #galeria, #galeriachar, #galeriatab {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  /* El carrito lateral se ajusta mejor en pantallas pequeñas */
-  #carritoDiv {
-    width: 280px; /* Reducimos el tamaño del carrito */
-  }
+#carritoDiv {
+  width: 280px;
+}
 
-
-/* Para móviles */
+/* para celulares */
 @media (max-width: 480px) {
-
   #bandejas h3, #charcuteria h3, #tablas h3 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2em;
   }
 
-
   .menu {
-    padding: 5px 0; /* Reducimos el padding en móviles */
+    padding: 5px 0;
   }
-  /* Las tarjetas también ocuparán todo el ancho disponible */
+
   #galeria, #galeriachar, #galeriatab {
-    grid-template-columns: repeat(1, 1fr); /* 2 productos por fila en dispositivos móviles y tabletas */
+    grid-template-columns: repeat(1, 1fr);
   }
-  /* Ajustamos el tamaño del carrito en pantallas más pequeñas */
+
   #carritoDiv {
     width: 250px;
   }
 
-  /* Hacemos los botones más grandes en dispositivos pequeños */
   button {
     font-size: 1em;
     padding: 12px 18px;
   }
 }
-
 
 footer {
   background-color: #f5e7e4;
@@ -418,4 +386,3 @@ footer {
   flex-grow: 1;
   padding-bottom: 80px; 
 }
-

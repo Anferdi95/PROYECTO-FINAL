@@ -1,49 +1,48 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Array para almacenar los productos
+    // lista de productos
     let productos = [];
     let productosVisible = [];
-    let productosPorPagina = 3; // Número de productos a mostrar por página
-    let indiceProducto = 0; // Índice del primer producto que se muestra
+    let productosPorPagina = 3; // cuantos se ven a la vez
+    let indiceProducto = 0;
 
-    // Función para cargar el JSON
+    // carga los datos del archivo json
     fetch('./db/datos.json')
         .then(response => response.json())
         .then(data => {
-            productos = data; // Guardamos los productos
-            mostrarProductos(); // Mostramos los productos al inicio
+            productos = data; // guarda los productos
+            mostrarProductos(); // los muestra al iniciar
         })
         .catch(error => {
-            console.error('Error cargando el JSON:', error);
+            console.error('error cargando el json:', error);
         });
 
-    // Función para formatear el precio en pesos colombianos
+    // pone el precio en formato colombiano
     function formatoPrecio(precio) {
         const formato = new Intl.NumberFormat('es-CO', {
             style: 'currency',
             currency: 'COP',
-            minimumFractionDigits: 0 // Evita los decimales si no los necesitas
+            minimumFractionDigits: 0
         });
         return formato.format(precio);
     }
 
-    // Función para mostrar productos
+    // muestra los productos en pantalla
     function mostrarProductos() {
-        // Limpiamos el contenedor
         const contenedor = document.querySelector('.cards-container');
         
-        // Verificamos si el contenedor existe
+        // revisa que el contenedor exista
         if (contenedor) {
             contenedor.innerHTML = '';
 
-            // Seleccionamos los productos a mostrar basados en el índice
+            // corta el array segun el indice actual
             productosVisible = productos.slice(indiceProducto, indiceProducto + productosPorPagina);
 
-            // Si el número de productos restantes es menor que el límite de productos por página, agregamos los primeros productos del array para completar
+            // si faltan productos, suma desde el principio
             if (productosVisible.length < productosPorPagina) {
                 productosVisible = productosVisible.concat(productos.slice(0, productosPorPagina - productosVisible.length));
             }
 
-            // Mostramos los productos seleccionados
+            // crea las tarjetas de productos
             productosVisible.forEach(producto => {
                 const div = document.createElement('div');
                 div.classList.add('card');
@@ -59,42 +58,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 contenedor.appendChild(div);
             });
         } else {
-            console.error('Contenedor con id "muestras" no encontrado.');
+            console.error('contenedor con id "muestras" no encontrado.');
         }
     }
 
-    // Event listeners para las flechas
+    // click en flecha izquierda
     document.getElementById('flecha-izquierda').addEventListener('click', () => {
         alternarProductos("izquierda");
     });
 
+    // click en flecha derecha
     document.getElementById('flecha-derecha').addEventListener('click', () => {
         alternarProductos("derecha");
     });
 
-    // Función para alternar los productos cuando se hace clic en las flechas
+    // cambia los productos segun la direccion
     function alternarProductos(direccion) {
         if (direccion === "izquierda") {
-            // Desplazar el índice hacia atrás y mostrar los productos anteriores
             indiceProducto = (indiceProducto - productosPorPagina + productos.length) % productos.length;
         } else if (direccion === "derecha") {
-            // Desplazar el índice hacia adelante y mostrar los siguientes productos
             indiceProducto = (indiceProducto + productosPorPagina) % productos.length;
         }
 
-        // Mostrar los nuevos productos
         mostrarProductos();
     }
 });
 
+// muestra u oculta el carrito al hacer click
 document.addEventListener("DOMContentLoaded", () => {
     const toggleCarrito = document.getElementById("toggleCarrito");
     const carritoDiv = document.getElementById("carritoDiv");
   
     if (toggleCarrito && carritoDiv) {
-      toggleCarrito.addEventListener("click", () => {
-        const isVisible = carritoDiv.style.display === "block";
-        carritoDiv.style.display = isVisible ? "none" : "block";
-      });
+        toggleCarrito.addEventListener("click", () => {
+            const isVisible = carritoDiv.style.display === "block";
+            carritoDiv.style.display = isVisible ? "none" : "block";
+        });
     }
-  });
+});
+
+

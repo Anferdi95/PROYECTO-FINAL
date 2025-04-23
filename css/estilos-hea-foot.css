@@ -321,6 +321,6 @@ main {
   }
 
   .buttons-left {
-    display: none; /* si querés ocultar íconos de redes en móvil */
+    display: none; /* ocultar íconos de redes en móvil */
   }
 }

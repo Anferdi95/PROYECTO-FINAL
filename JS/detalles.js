@@ -1,5 +1,5 @@
 
-    fetch('../db/products.json')  // Asegúrate de que la ruta sea correcta
+    fetch('../db/products.json')  
       .then(response => response.json())
       .then(data => {
         const container = document.getElementById('productos-container');
@@ -9,7 +9,7 @@
           const card = document.createElement('div');
           card.classList.add('card');
 
-          // Asignar la clase correcta según el tipo de producto
+          
           let productoClase = '';
           if (producto.habilidades.includes("Bandejas")) {
             productoClase = 'Bandeja';

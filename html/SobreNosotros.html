@@ -1,96 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre Nosotros</title>
-    <link rel="stylesheet" href="../css/sobreN.css" />
-    <link rel="stylesheet" href="../css/estilos-hea-foot.css" />
-    <link rel="stylesheet" href="../css/estilos-cont.css" />
-    <link rel="stylesheet" href="../css/contacto.css" />
-    <link rel="stylesheet" href="../css/servicios.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros</title>
+  <link rel="stylesheet" href="../css/sobreN.css" />
+  <link rel="stylesheet" href="../css/estilos-hea-foot.css" />
+  <link rel="stylesheet" href="../css/estilos-cont.css" />
+  <link rel="stylesheet" href="../css/contacto.css" />
+  <link rel="stylesheet" href="../css/servicios.css">
 
 
-  </head>
-  <body>
-    <header>
-      <div class="header">
-        <!-- Botón de menú hamburguesa -->
-        <div class="menu-toggle" id="menu-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+</head>
 
-        <!-- Botones de redes -->
-        <div class="buttons-left">
-          <a
-            class="btn-square"
-            href="https://www.facebook.com/Quesosentablabogota/"
-            target="_blank"
-            title="Facebook"
-          >
-            <img
-              class="face"
-              src="../img/facebook.svg"
-              alt="Icono de Facebook"
-            />
-          </a>
-          <a
-            class="btn-square"
-            href="https://www.instagram.com/quesosentablabogota1"
-            target="_blank"
-            title="Instagram"
-          >
-            <img
-              class="insta"
-              src="../img/1362857.png"
-              alt="Icono de Instagram"
-            />
-          </a>
-          <a
-            class="btn-square"
-            href="https://api.whatsapp.com/send?phone=573209996208"
-            target="_blank"
-            title="WhatsApp"
-          >
-            <img class="whatsapp" src="../img/viber.svg" alt="WhatsApp" />
-          </a>
-        </div>
+<body>
+  <header>
+    <div class="header">
+      <!-- Botón de menú hamburguesa -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
 
-        <!-- Logo + nav -->
-        <div class="center-content">
-          <img
-            class="logo_header"
-            src="../img/QET_Mesa de trabajo 1 copia.png"
-            alt="logo"
-          />
-          <nav class="nav" id="nav-menu">
-            <ul>
-              <li><a href="../index.html">Inicio</a></li>
-              <hr />
-              <li><a href="./SobreNosotros.html">Sobre Nosotros</a></li>
-              <hr />
-              <li><a href="Servicios.html">Servicios</a></li>
-              <hr />
-              <li><a href="./contacto.html">Contáctanos</a></li>
-            </ul>
-          </nav>
-        </div>
+      <!-- Botones de redes -->
+      <div class="buttons-left">
+        <a class="btn-square" href="https://www.facebook.com/Quesosentablabogota/" target="_blank" title="Facebook">
+          <img class="face" src="../img/facebook.svg" alt="Icono de Facebook" />
+        </a>
+        <a class="btn-square" href="https://www.instagram.com/quesosentablabogota1" target="_blank" title="Instagram">
+          <img class="insta" src="../img/1362857.png" alt="Icono de Instagram" />
+        </a>
+        <a class="btn-square" href="https://api.whatsapp.com/send?phone=573209996208" target="_blank" title="WhatsApp">
+          <img class="whatsapp" src="../img/viber.svg" alt="WhatsApp" />
+        </a>
+      </div>
 
-        <!-- Carrito -->
-        <div class="button-right">
-          <img
-            src="../img/img_opti/carritoquesos-06.png"
-            alt="carrito"
-            class="carrito"
-            id="toggleCarrito"
-          />
+      <!-- Logo + nav -->
+      <div class="center-content">
+        <img class="logo_header" src="../img/QET_Mesa de trabajo 1 copia.png" alt="logo" />
+        <nav class="nav" id="nav-menu">
+          <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <hr />
+            <li><a href="./SobreNosotros.html">Sobre Nosotros</a></li>
+            <hr />
+            <li><a href="Servicios.html">Servicios</a></li>
+            <hr />
+            <li><a href="./contacto.html">Contáctanos</a></li>
+          </ul>
+        </nav>
+      </div>
 
-          <div
-            id="carritoDiv"
-            class="carrito"
-            style="
+      <!-- Carrito -->
+      <div class="button-right">
+        <img src="../img/img_opti/carritoquesos-06.png" alt="carrito" class="carrito" id="toggleCarrito" />
+
+        <div id="carritoDiv"  class="carrito" 
+        
+        
+        style="
               display: none;
               position: fixed;
               top: 60px;
@@ -103,14 +73,11 @@
               overflow-y: auto;
               z-index: 1000;
               padding-top: 50px;
-            "
-          >
-            <h3>Carrito de compras</h3>
-            <ul id="carritoItems"></ul>
-            <div id="carritoTotal"></div>
-            <button
-              id="vaciar"
-              style="
+            ">
+          <h3>Carrito de compras</h3>
+          <ul id="carritoItems"></ul>
+          <div id="carritoTotal"></div>
+          <button id="vaciar" style="
                 background-color: #cf8d6d;
                 color: white;
                 padding: 10px;
@@ -118,96 +85,73 @@
                 cursor: pointer;
                 width: 100%;
                 border-radius: 5px;
-              "
-            >
-              Vaciar carrito
-            </button>
-          </div>
+              ">
+            Vaciar carrito
+          </button>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="contenedor">
-      <div class="texto">
-        <h1>Sobre Nosotros</h1>
-        <em>Pasión por el buen gusto. <br />Amor por los detalles.</em>
-        <p>
-          En <q>Quesos en tabla Bogotá</q>, creemos que cada evento merece ser
-          memorable, y no hay mejor manera de lograrlo que con una experiencia
-          gastronómica que despierte los sentidos.
-        </p>
-        <p>
-          Somos un emprendimiento artesanal especializado en tablas de quesos,
-          charcutería premium y mesas gourmet pensadas para compartir, celebrar
-          y disfrutar.
-        </p>
-        <p>
-          Nos encanta combinar sabores, colores y texturas para crear
-          composiciones que no solo se ven increíbles, sino que también cuentan
-          una historia: la del cariño con el que seleccionamos cada ingrediente
-          y la del momento especial que estás por vivir.
-        </p>
-        <a class="boton" href="../html/Servicios.html">Ver nuestras tablas</a>
-        
+  <section class="contenedor">
+    <div class="texto">
+      <h1>Sobre Nosotros</h1>
+      <em>Pasión por el buen gusto. <br />Amor por los detalles.</em>
+      <p>
+        En <q>Quesos en tabla Bogotá</q>, creemos que cada evento merece ser
+        memorable, y no hay mejor manera de lograrlo que con una experiencia
+        gastronómica que despierte los sentidos.
+      </p>
+      <p>
+        Somos un emprendimiento artesanal especializado en tablas de quesos,
+        charcutería premium y mesas gourmet pensadas para compartir, celebrar
+        y disfrutar.
+      </p>
+      <p>
+        Nos encanta combinar sabores, colores y texturas para crear
+        composiciones que no solo se ven increíbles, sino que también cuentan
+        una historia: la del cariño con el que seleccionamos cada ingrediente
+        y la del momento especial que estás por vivir.
+      </p>
+      <a class="boton" href="../html/Servicios.html">Ver nuestras tablas</a>
+
+    </div>
+    <div class="imagen">
+      <img src="../img/sn_Mesa de trabajo 1.png" alt="Tabla de quesos gourmet" />
+      <img src="../img/sn_Mesa de trabajo 1 copia.png" alt="Tabla de quesos gourmet" />
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <!-- izquierda Footer -->
+      <div class="footer-left">
+        <a href="https://www.facebook.com/Quesosentablabogota/" target="_blank">
+          <img class="face" src="../img/facebook.svg" alt="Icono de Facebook" /></a>
+
+        <a href="https://www.instagram.com/quesosentablabogota1?igshid=YmMyMTA2M2Y%3D" target="_blank"><img
+            class="insta" src="../img/1362857.png" alt="insta" /></a>
+
+        <a href="https://api.whatsapp.com/send?phone=573209996208" target="_blank"><img class="whatsapp"
+            src="../img/viber.svg" alt="whats" /></a>
       </div>
-      <div class="imagen">
-        <img
-          src="../img/sn_Mesa de trabajo 1.png"
-          alt="Tabla de quesos gourmet"
-        />
-        <img
-          src="../img/sn_Mesa de trabajo 1 copia.png"
-          alt="Tabla de quesos gourmet"
-        />
+
+      <!--  Logo -->
+      <img class="logo_footer" src="../img/logo_footer-05.png" alt="Logo Footer" />
+
+      <!-- derecha Footer -->
+      <div class="footer-right">
+        <p class="gg">
+          Tu Empresa &copy; 2025 - Todos los derechos reservados. <br /><a href="#">Términos y Condiciones</a>
+        </p>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <!-- izquierda Footer -->
-        <div class="footer-left">
-          <a
-            href="https://www.facebook.com/Quesosentablabogota/"
-            target="_blank"
-          >
-            <img class="face" src="../img/facebook.svg" alt="Icono de Facebook"
-          /></a>
+  <script src="../JS/hamburguesa.js"></script>
+  <script src="../JS/java.js"></script>
+  <script src="../JS/servicios.js"></script>
 
-          <a
-            href="https://www.instagram.com/quesosentablabogota1?igshid=YmMyMTA2M2Y%3D"
-            target="_blank"
-            ><img class="insta" src="../img/1362857.png" alt="insta"
-          /></a>
+</body>
 
-          <a
-            href="https://api.whatsapp.com/send?phone=573209996208"
-            target="_blank"
-            ><img class="whatsapp" src="../img/viber.svg" alt="whats"
-          /></a>
-        </div>
-
-        <!--  Logo -->
-        <img
-          class="logo_footer"
-          src="../img/logo_footer-05.png"
-          alt="Logo Footer"
-        />
-
-        <!-- derecha Footer -->
-        <div class="footer-right">
-          <p class="gg">
-            Tu Empresa &copy; 2025 - Todos los derechos reservados. <br /><a
-              href="#"
-              >Términos y Condiciones</a
-            >
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="../JS/hamburguesa.js"></script>
-    <script src="../JS/java.js"></script>
-    <script src="../JS/servicios.js"></script>
-
-  </body>
 </html>
