@@ -196,3 +196,4 @@ document.getElementById("toggleCarrito").addEventListener("click", () => {
 
 localStorage.setItem("carrito", JSON.stringify(carrito));
 const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+
