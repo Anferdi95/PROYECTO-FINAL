@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="nombre">${producto.nombre}</h3>
                     <p class="Precio">${formatoPrecio(producto.Precio)}</p>
                     <p class="clase">${producto.habilidades}</p>
-                    <button class="boton_carrito">Añadir al carrito</button>
-                `;
+                    <a href="./html/servicios.html" target="_blank" class="boton_carrito">IR</a>`
+                    ;
                 
                 contenedor.appendChild(div);
             });
