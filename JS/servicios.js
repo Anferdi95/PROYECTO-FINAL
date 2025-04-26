@@ -178,7 +178,7 @@ function cargarProductos(categoria, contenedorId) {
 
 // Eventos iniciales
 document.addEventListener('DOMContentLoaded', () => {
-  mostrarInfo('bandejas'); // Cargar bandejas por defecto
+  mostrarInfo('bandejas'); // Cargar bandejas 
   mostrarCarrito();
 });
 
